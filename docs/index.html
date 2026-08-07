@@ -1,119 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MeshGarage</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="MeshGarage — an infinite 2D workspace for browsing, inspecting and comparing 3D assets."
+    >
+
+    <title>MeshGarage — 3D Asset Viewer</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-<header>
-    <div class="container">
-        <div class="logo">MeshGarage</div>
 
-        <nav>
-            <a href="https://github.com/SRJ-v2/MeshGarage">GitHub</a>
-            <a href="https://github.com/SRJ-v2/MeshGarage/blob/main/docs/USER_GUIDE_EN.md">
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="container header-inner">
+
+        <a class="logo" href="#">
+            MeshGarage
+        </a>
+
+        <nav class="nav">
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#requirements">
+                Requirements
+            </a>
+
+            <a
+                href="USER_GUIDE_EN.md"
+                target="_blank"
+            >
                 Documentation
             </a>
+
+            <a
+                href="https://github.com/SRJ-v2/MeshGarage"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
         </nav>
+
     </div>
+
 </header>
 
 
+
+<!-- MAIN -->
+
 <main>
+
+
+    <!-- HERO -->
 
     <section class="hero">
 
-        <div class="container">
+        <div class="container hero-content">
+
 
             <div class="badge">
-                PUBLIC BETA
+                PUBLIC BETA · WINDOWS
             </div>
 
-            <h1>MeshGarage</h1>
+
+            <h1>
+                MeshGarage
+            </h1>
+
 
             <p class="subtitle">
+
                 An infinite 2D workspace for browsing,
                 inspecting and comparing 3D assets.
+
             </p>
+
+
+            <div class="platform">
+
+                Windows 10 / 11 · 64-bit
+
+            </div>
+
 
             <div class="buttons">
 
+
                 <a
                     id="installer-download"
-                    class="button primary"
+                    class="button button-primary disabled"
                     href="#"
                 >
-                    Download Installer
+
+                    Download for Windows
+
                 </a>
+
 
                 <a
                     id="portable-download"
-                    class="button secondary"
+                    class="button button-secondary disabled"
                     href="#"
                 >
-                    Portable
+
+                    Portable Version
+
                 </a>
 
+
             </div>
 
-            <div class="downloads">
-                <span id="download-count">—</span> downloads
+
+            <div class="release-info">
+
+                <span id="version">
+                    Loading latest release...
+                </span>
+
+                <span class="separator">
+                    ·
+                </span>
+
+                <span>
+                    <strong id="download-count">—</strong>
+                    downloads
+                </span>
+
             </div>
 
-            <div id="version" class="version">
-                Loading latest version...
-            </div>
+
+            <p class="beta-note">
+                Free during the beta period
+            </p>
+
 
         </div>
 
     </section>
 
 
-    <section class="features">
+
+    <!-- FEATURES -->
+
+    <section
+        id="features"
+        class="section"
+    >
 
         <div class="container">
 
-            <h2>Built for working with 3D assets</h2>
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    WORKSPACE
+                </span>
+
+                <h2>
+                    Built for working with 3D assets
+                </h2>
+
+            </div>
+
+
 
             <div class="feature-grid">
 
-                <div class="feature">
-                    <h3>Infinite 2D board</h3>
-                    <p>
-                        Place and organize multiple 3D models
-                        in a single visual workspace.
-                    </p>
-                </div>
 
-                <div class="feature">
-                    <h3>Inspect models</h3>
-                    <p>
-                        PBR materials, textures, UV, UDIM,
-                        normals and wireframe inspection.
-                    </p>
-                </div>
+                <article class="feature-card">
 
-                <div class="feature">
-                    <h3>High-poly friendly</h3>
-                    <p>
-                        Browse high-poly and low-poly assets
-                        without opening a full 3D package.
-                    </p>
-                </div>
+                    <span class="feature-number">
+                        01
+                    </span>
 
-                <div class="feature">
-                    <h3>References & notes</h3>
+                    <h3>
+                        Infinite 2D Board
+                    </h3>
+
                     <p>
-                        Keep 2D references, concepts and notes
-                        next to your 3D models.
+                        Place multiple 3D models, references
+                        and notes on one visual workspace.
                     </p>
-                </div>
+
+                </article>
+
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Inspect Models
+                    </h3>
+
+                    <p>
+                        Inspect PBR materials, textures,
+                        UV, UDIM, normals and wireframe.
+                    </p>
+
+                </article>
+
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        03
+                    </span>
+
+                    <h3>
+                        High-Poly Friendly
+                    </h3>
+
+                    <p>
+                        Browse large collections of high-poly
+                        and low-poly models without opening
+                        a full 3D package.
+                    </p>
+
+                </article>
+
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        04
+                    </span>
+
+                    <h3>
+                        References & Notes
+                    </h3>
+
+                    <p>
+                        Keep concepts, reference images
+                        and text notes next to your models.
+                    </p>
+
+                </article>
+
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        05
+                    </span>
+
+                    <h3>
+                        Shared Lighting
+                    </h3>
+
+                    <p>
+                        Compare several models under
+                        the same studio lighting conditions.
+                    </p>
+
+                </article>
+
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        06
+                    </span>
+
+                    <h3>
+                        Portable Projects
+                    </h3>
+
+                    <p>
+                        Package the board, models and textures
+                        into a single project archive.
+                    </p>
+
+                </article>
+
 
             </div>
 
@@ -122,36 +307,232 @@
     </section>
 
 
-    <section class="formats">
+
+    <!-- FORMATS -->
+
+    <section class="section section-dark">
 
         <div class="container">
 
-            <h2>Supported formats</h2>
 
-            <p>
-                GLB / glTF · FBX · OBJ · STL
-            </p>
+            <div class="section-heading">
+
+                <span class="section-label">
+                    FORMATS
+                </span>
+
+                <h2>
+                    Supported 3D formats
+                </h2>
+
+            </div>
+
+
+            <div class="format-list">
+
+                <span>GLB</span>
+                <span>glTF</span>
+                <span>FBX</span>
+                <span>OBJ</span>
+                <span>STL</span>
+
+            </div>
+
 
         </div>
 
     </section>
+
+
+
+    <!-- REQUIREMENTS -->
+
+    <section
+        id="requirements"
+        class="section"
+    >
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    WINDOWS
+                </span>
+
+                <h2>
+                    System Requirements
+                </h2>
+
+            </div>
+
+
+
+            <div class="requirements">
+
+
+                <div class="requirement">
+
+                    <span class="requirement-name">
+                        Operating System
+                    </span>
+
+                    <span class="requirement-value">
+                        Windows 10 / 11 · 64-bit
+                    </span>
+
+                </div>
+
+
+                <div class="requirement">
+
+                    <span class="requirement-name">
+                        GPU
+                    </span>
+
+                    <span class="requirement-value">
+                        DirectX 12 or Vulkan compatible
+                    </span>
+
+                </div>
+
+
+                <div class="requirement">
+
+                    <span class="requirement-name">
+                        VRAM
+                    </span>
+
+                    <span class="requirement-value">
+                        4 GB minimum · 8 GB recommended
+                    </span>
+
+                </div>
+
+
+                <div class="requirement">
+
+                    <span class="requirement-name">
+                        RAM
+                    </span>
+
+                    <span class="requirement-value">
+                        8 GB minimum · 16 GB recommended
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- DOWNLOAD -->
+
+    <section class="download-section">
+
+        <div class="container download-content">
+
+
+            <span class="section-label">
+                PUBLIC BETA
+            </span>
+
+
+            <h2>
+                Try MeshGarage
+            </h2>
+
+
+            <p>
+                Currently available for Windows only.
+            </p>
+
+
+            <div class="buttons">
+
+
+                <a
+                    id="installer-download-bottom"
+                    class="button button-primary disabled"
+                    href="#"
+                >
+
+                    Download for Windows
+
+                </a>
+
+
+                <a
+                    id="portable-download-bottom"
+                    class="button button-secondary disabled"
+                    href="#"
+                >
+
+                    Portable Version
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
 
 </main>
 
 
-<footer>
 
-    <div class="container">
+<!-- FOOTER -->
 
-        <span>MeshGarage Beta</span>
+<footer class="footer">
 
-        <a href="https://github.com/SRJ-v2/MeshGarage/blob/main/docs/USER_GUIDE_EN.md">
-            English
-        </a>
+    <div class="container footer-inner">
 
-        <a href="https://github.com/SRJ-v2/MeshGarage/blob/main/docs/USER_GUIDE_RU.md">
-            Русский
-        </a>
+
+        <div>
+            MeshGarage
+        </div>
+
+
+        <div class="footer-links">
+
+
+            <a
+                href="USER_GUIDE_EN.md"
+                target="_blank"
+            >
+                English
+            </a>
+
+
+            <a
+                href="USER_GUIDE_RU.md"
+                target="_blank"
+            >
+                Русский
+            </a>
+
+
+            <a
+                href="https://github.com/SRJ-v2/MeshGarage"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+
+        </div>
+
 
     </div>
 
@@ -160,5 +541,7 @@
 
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
