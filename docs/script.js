@@ -1,34 +1,38 @@
 const OWNER = "SRJ-v2";
 const REPO = "MeshGarage";
 
-
 const API_URL =
     `https://api.github.com/repos/${OWNER}/${REPO}/releases?per_page=100`;
 
 
-
-async function loadMeshGarageRelease() {
+async function loadReleaseData() {
 
     try {
 
-
-        const response = await fetch(API_URL);
+        const response =
+            await fetch(API_URL);
 
 
         if (!response.ok) {
 
             throw new Error(
-                `GitHub API returned ${response.status}`
+                `GitHub API error: ${response.status}`
             );
 
         }
 
 
-        const releases = await response.json();
+        const releases =
+            await response.json();
 
 
+        const published =
+            releases.filter(
+                release => !release.draft
+            );
 
-        if (!Array.isArray(releases) || releases.length === 0) {
+
+        if (!published.length) {
 
             throw new Error(
                 "No releases found"
@@ -37,74 +41,48 @@ async function loadMeshGarageRelease() {
         }
 
 
+        const latest =
+            published[0];
 
-        /* ----------------------------------------
-           Find newest published release
-        ---------------------------------------- */
-
-        const latestRelease =
-            releases.find(
-                release =>
-                    !release.draft
-            );
-
-
-        if (!latestRelease) {
-
-            throw new Error(
-                "No published releases found"
-            );
-
-        }
-
-
-
-        /* ----------------------------------------
-           Find installer and portable builds
-        ---------------------------------------- */
 
         const installer =
-            latestRelease.assets.find(
+            latest.assets.find(
                 asset =>
-                    /setup.*\.exe$/i.test(asset.name)
+                    /setup.*\.exe$/i.test(
+                        asset.name
+                    )
             );
 
 
         const portable =
-            latestRelease.assets.find(
+            latest.assets.find(
                 asset =>
-                    /portable.*\.zip$/i.test(asset.name)
+                    /portable.*\.zip$/i.test(
+                        asset.name
+                    )
             );
 
 
+        /* Version */
 
-        /* ----------------------------------------
-           Set latest version
-        ---------------------------------------- */
-
-        const versionElement =
-            document.getElementById("version");
-
-
-        versionElement.textContent =
-            latestRelease.name ||
-            latestRelease.tag_name;
+        document.getElementById(
+            "version"
+        ).textContent =
+            latest.name ||
+            latest.tag_name;
 
 
 
-        /* ----------------------------------------
-           Set installer URLs
-        ---------------------------------------- */
+        /* Download buttons */
 
         if (installer) {
 
-            setDownloadButton(
+            enableButton(
                 "installer-download",
                 installer.browser_download_url
             );
 
-
-            setDownloadButton(
+            enableButton(
                 "installer-download-bottom",
                 installer.browser_download_url
             );
@@ -112,20 +90,14 @@ async function loadMeshGarageRelease() {
         }
 
 
-
-        /* ----------------------------------------
-           Set portable URLs
-        ---------------------------------------- */
-
         if (portable) {
 
-            setDownloadButton(
+            enableButton(
                 "portable-download",
                 portable.browser_download_url
             );
 
-
-            setDownloadButton(
+            enableButton(
                 "portable-download-bottom",
                 portable.browser_download_url
             );
@@ -134,26 +106,14 @@ async function loadMeshGarageRelease() {
 
 
 
-        /* ----------------------------------------
-           Count downloads of MeshGarage builds
-           across ALL releases
-        ---------------------------------------- */
+        /* Total downloads */
 
         let totalDownloads = 0;
 
 
-        releases.forEach(release => {
-
-
-            if (release.draft) {
-
-                return;
-
-            }
-
+        published.forEach(release => {
 
             release.assets.forEach(asset => {
-
 
                 const isInstaller =
                     /setup.*\.exe$/i.test(
@@ -167,19 +127,19 @@ async function loadMeshGarageRelease() {
                     );
 
 
-                if (isInstaller || isPortable) {
+                if (
+                    isInstaller ||
+                    isPortable
+                ) {
 
                     totalDownloads +=
                         asset.download_count || 0;
 
                 }
 
-
             });
 
-
         });
-
 
 
         document.getElementById(
@@ -189,19 +149,16 @@ async function loadMeshGarageRelease() {
 
 
     }
+
     catch (error) {
 
-
-        console.error(
-            "Unable to load MeshGarage release:",
-            error
-        );
+        console.error(error);
 
 
         document.getElementById(
             "version"
         ).textContent =
-            "Beta";
+            "MeshGarage Beta";
 
 
         document.getElementById(
@@ -209,51 +166,34 @@ async function loadMeshGarageRelease() {
         ).textContent =
             "—";
 
-
     }
 
 }
 
 
-
-/* ----------------------------------------
-   Enable download button
----------------------------------------- */
-
-function setDownloadButton(
-    elementId,
-    downloadUrl
+function enableButton(
+    id,
+    url
 ) {
 
-
-    const element =
-        document.getElementById(
-            elementId
-        );
+    const button =
+        document.getElementById(id);
 
 
-    if (!element) {
-
+    if (!button) {
         return;
-
     }
 
 
-    element.href =
-        downloadUrl;
+    button.href =
+        url;
 
 
-    element.classList.remove(
+    button.classList.remove(
         "disabled"
     );
 
-
 }
 
 
-
-/* ----------------------------------------
-   Start
----------------------------------------- */
-
-loadMeshGarageRelease();
+loadReleaseData();
