@@ -1,106 +1,259 @@
 const OWNER = "SRJ-v2";
 const REPO = "MeshGarage";
 
-const API =
+
+const API_URL =
     `https://api.github.com/repos/${OWNER}/${REPO}/releases?per_page=100`;
 
-async function loadReleaseData() {
+
+
+async function loadMeshGarageRelease() {
 
     try {
 
-        const response = await fetch(API);
+
+        const response = await fetch(API_URL);
+
 
         if (!response.ok) {
-            throw new Error(`GitHub API: ${response.status}`);
+
+            throw new Error(
+                `GitHub API returned ${response.status}`
+            );
+
         }
+
 
         const releases = await response.json();
 
-        if (!releases.length) {
-            return;
-        }
 
 
-        // -------------------------
-        // Total downloads
-        // -------------------------
+        if (!Array.isArray(releases) || releases.length === 0) {
 
-        let totalDownloads = 0;
-
-        for (const release of releases) {
-
-            for (const asset of release.assets) {
-
-                totalDownloads += asset.download_count;
-            }
+            throw new Error(
+                "No releases found"
+            );
 
         }
 
-        document.getElementById("download-count").textContent =
-            totalDownloads.toLocaleString();
 
 
-        // -------------------------
-        // Newest published release
-        // -------------------------
+        /* ----------------------------------------
+           Find newest published release
+        ---------------------------------------- */
 
-        const latestRelease = releases[0];
+        const latestRelease =
+            releases.find(
+                release =>
+                    !release.draft
+            );
 
-        document.getElementById("version").textContent =
-            latestRelease.name || latestRelease.tag_name;
+
+        if (!latestRelease) {
+
+            throw new Error(
+                "No published releases found"
+            );
+
+        }
 
 
-        // -------------------------
-        // Find installer
-        // -------------------------
+
+        /* ----------------------------------------
+           Find installer and portable builds
+        ---------------------------------------- */
 
         const installer =
-            latestRelease.assets.find(asset =>
-                /setup.*\.exe$/i.test(asset.name)
+            latestRelease.assets.find(
+                asset =>
+                    /setup.*\.exe$/i.test(asset.name)
             );
 
-
-        // -------------------------
-        // Find portable
-        // -------------------------
 
         const portable =
-            latestRelease.assets.find(asset =>
-                /portable.*\.zip$/i.test(asset.name)
+            latestRelease.assets.find(
+                asset =>
+                    /portable.*\.zip$/i.test(asset.name)
             );
 
+
+
+        /* ----------------------------------------
+           Set latest version
+        ---------------------------------------- */
+
+        const versionElement =
+            document.getElementById("version");
+
+
+        versionElement.textContent =
+            latestRelease.name ||
+            latestRelease.tag_name;
+
+
+
+        /* ----------------------------------------
+           Set installer URLs
+        ---------------------------------------- */
 
         if (installer) {
 
-            document.getElementById(
-                "installer-download"
-            ).href = installer.browser_download_url;
+            setDownloadButton(
+                "installer-download",
+                installer.browser_download_url
+            );
+
+
+            setDownloadButton(
+                "installer-download-bottom",
+                installer.browser_download_url
+            );
 
         }
 
+
+
+        /* ----------------------------------------
+           Set portable URLs
+        ---------------------------------------- */
 
         if (portable) {
 
-            document.getElementById(
-                "portable-download"
-            ).href = portable.browser_download_url;
+            setDownloadButton(
+                "portable-download",
+                portable.browser_download_url
+            );
+
+
+            setDownloadButton(
+                "portable-download-bottom",
+                portable.browser_download_url
+            );
 
         }
+
+
+
+        /* ----------------------------------------
+           Count downloads of MeshGarage builds
+           across ALL releases
+        ---------------------------------------- */
+
+        let totalDownloads = 0;
+
+
+        releases.forEach(release => {
+
+
+            if (release.draft) {
+
+                return;
+
+            }
+
+
+            release.assets.forEach(asset => {
+
+
+                const isInstaller =
+                    /setup.*\.exe$/i.test(
+                        asset.name
+                    );
+
+
+                const isPortable =
+                    /portable.*\.zip$/i.test(
+                        asset.name
+                    );
+
+
+                if (isInstaller || isPortable) {
+
+                    totalDownloads +=
+                        asset.download_count || 0;
+
+                }
+
+
+            });
+
+
+        });
+
+
+
+        document.getElementById(
+            "download-count"
+        ).textContent =
+            totalDownloads.toLocaleString();
+
 
     }
     catch (error) {
 
+
         console.error(
-            "Unable to load GitHub release information:",
+            "Unable to load MeshGarage release:",
             error
         );
 
+
+        document.getElementById(
+            "version"
+        ).textContent =
+            "Beta";
+
+
         document.getElementById(
             "download-count"
-        ).textContent = "—";
+        ).textContent =
+            "—";
+
 
     }
 
 }
 
-loadReleaseData();
+
+
+/* ----------------------------------------
+   Enable download button
+---------------------------------------- */
+
+function setDownloadButton(
+    elementId,
+    downloadUrl
+) {
+
+
+    const element =
+        document.getElementById(
+            elementId
+        );
+
+
+    if (!element) {
+
+        return;
+
+    }
+
+
+    element.href =
+        downloadUrl;
+
+
+    element.classList.remove(
+        "disabled"
+    );
+
+
+}
+
+
+
+/* ----------------------------------------
+   Start
+---------------------------------------- */
+
+loadMeshGarageRelease();
