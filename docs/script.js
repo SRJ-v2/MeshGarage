@@ -5,7 +5,6 @@ const API_URL =
     `https://api.github.com/repos/${OWNER}/${REPO}/releases?per_page=100`;
 
 
-
 async function loadReleaseData() {
 
     try {
@@ -42,15 +41,9 @@ async function loadReleaseData() {
         }
 
 
-
-        /* Latest release */
-
         const latest =
             published[0];
 
-
-
-        /* Find installer */
 
         const installer =
             latest.assets.find(
@@ -61,9 +54,6 @@ async function loadReleaseData() {
             );
 
 
-
-        /* Find portable */
-
         const portable =
             latest.assets.find(
                 asset =>
@@ -73,18 +63,12 @@ async function loadReleaseData() {
             );
 
 
-
-        /* Display release name */
-
         document.getElementById(
             "version"
         ).textContent =
             latest.name ||
             latest.tag_name;
 
-
-
-        /* Installer buttons */
 
         if (installer) {
 
@@ -102,9 +86,6 @@ async function loadReleaseData() {
         }
 
 
-
-        /* Portable buttons */
-
         if (portable) {
 
             enableButton(
@@ -120,9 +101,6 @@ async function loadReleaseData() {
 
         }
 
-
-
-        /* Total downloads */
 
         let totalDownloads = 0;
 
@@ -162,18 +140,15 @@ async function loadReleaseData() {
         );
 
 
-
         document.getElementById(
             "download-count"
         ).textContent =
             totalDownloads.toLocaleString();
 
-
     }
 
 
     catch (error) {
-
 
         console.error(
             "Unable to load MeshGarage release:",
@@ -197,9 +172,6 @@ async function loadReleaseData() {
 }
 
 
-
-/* Enable download link */
-
 function enableButton(
     elementId,
     downloadUrl
@@ -212,9 +184,7 @@ function enableButton(
 
 
     if (!element) {
-
         return;
-
     }
 
 
@@ -227,7 +197,6 @@ function enableButton(
     );
 
 }
-
 
 
 loadReleaseData();
