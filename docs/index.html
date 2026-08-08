@@ -14,9 +14,9 @@
         content="MeshGarage — an infinite 2D workspace for browsing, inspecting and comparing 3D assets."
     >
 
-    <title>MeshGarage — 3D Asset Workspace</title>
+    <title>MeshGarage</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 
 
@@ -27,9 +27,7 @@
 <div class="background-glow glow-right"></div>
 
 
-<!-- ======================================================
-     HEADER
-====================================================== -->
+<!-- HEADER -->
 
 <header class="header">
 
@@ -87,9 +85,7 @@
 <main>
 
 
-<!-- ======================================================
-     HERO
-====================================================== -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -110,17 +106,14 @@
 
 
             <h1>
-
-                Browse, inspect and compare
-                <span>3D assets.</span>
-
+                Browse, inspect and compare <span>3D assets.</span>
             </h1>
 
         </div>
 
 
 
-        <!-- REAL APPLICATION SCREENSHOT -->
+        <!-- SCREENSHOT -->
 
         <div class="preview-container">
 
@@ -140,96 +133,114 @@
 
 
 
-        <!-- INFO -->
+        <!-- INFO UNDER SCREENSHOT -->
 
-        <div class="hero-info">
-
-            <p class="hero-description">
-
-                MeshGarage is an infinite 2D workspace where
-                3D models, references, textures and notes
-                can live together.
-
-            </p>
+        <div class="hero-info-row">
 
 
-            <div class="platform">
+            <!-- LEFT -->
 
-                <span class="windows-symbol">
-                    ⊞
-                </span>
-
-                Windows 10 / 11
-
-                <span class="separator">
-                    •
-                </span>
-
-                64-bit only
-
-            </div>
+            <div class="hero-actions">
 
 
+                <div class="download-buttons">
 
-            <div class="download-buttons">
+                    <a
+                        id="installer-download"
+                        class="button primary-button disabled"
+                        href="#"
+                    >
 
-                <a
-                    id="installer-download"
-                    class="button primary-button disabled"
-                    href="#"
-                >
+                        <span>
+                            Download for Windows
+                        </span>
 
-                    <span>
-                        Download for Windows
+                        <small>
+                            Installer
+                        </small>
+
+                    </a>
+
+
+                    <a
+                        id="portable-download"
+                        class="button secondary-button disabled"
+                        href="#"
+                    >
+
+                        <span>
+                            Portable
+                        </span>
+
+                        <small>
+                            No installation
+                        </small>
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="release-info">
+
+                    <span id="version">
+                        Loading release...
                     </span>
 
-                    <small>
-                        Installer
-                    </small>
-
-                </a>
-
-
-                <a
-                    id="portable-download"
-                    class="button secondary-button disabled"
-                    href="#"
-                >
+                    <span class="release-divider"></span>
 
                     <span>
-                        Portable
+                        <strong id="download-count">—</strong>
+                        downloads
                     </span>
 
-                    <small>
-                        No installation
-                    </small>
+                    <span class="release-divider"></span>
 
-                </a>
+                    <span>
+                        Free during beta
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <div class="hero-text-block">
+
+
+                <p class="hero-description">
+
+                    MeshGarage is an infinite 2D workspace where
+                    3D models, references, textures and notes
+                    can live together.
+
+                </p>
+
+
+                <div class="platform">
+
+                    <span class="windows-symbol">
+                        ⊞
+                    </span>
+
+                    Windows 10 / 11
+
+                    <span class="separator">
+                        •
+                    </span>
+
+                    64-bit only
+
+                </div>
+
 
             </div>
 
-
-
-            <div class="release-info">
-
-                <span id="version">
-                    Loading release...
-                </span>
-
-                <span class="release-divider"></span>
-
-                <span>
-                    <strong id="download-count">—</strong>
-                    downloads
-                </span>
-
-                <span class="release-divider"></span>
-
-                <span>
-                    Free during beta
-                </span>
-
-            </div>
 
         </div>
 
@@ -240,9 +251,7 @@
 
 
 
-<!-- ======================================================
-     SHORT INFO
-====================================================== -->
+<!-- QUICK FEATURES -->
 
 <section class="feature-strip">
 
@@ -307,9 +316,7 @@
 
 
 
-<!-- ======================================================
-     FEATURES
-====================================================== -->
+<!-- FEATURES -->
 
 <section
     id="features"
@@ -330,10 +337,7 @@
 
 
                 <h2>
-
-                    Everything you need
-                    for fast asset inspection.
-
+                    Everything you need for fast asset inspection.
                 </h2>
 
             </div>
@@ -571,9 +575,7 @@
 
 
 
-<!-- ======================================================
-     FORMATS
-====================================================== -->
+<!-- FORMATS -->
 
 <section
     id="formats"
@@ -589,10 +591,7 @@
 
 
         <h2>
-
-            Drop your models
-            directly onto the board.
-
+            Drop your models directly onto the board.
         </h2>
 
 
@@ -602,9 +601,7 @@
 
             <div class="format-card">
 
-                <strong>
-                    GLB
-                </strong>
+                <strong>GLB</strong>
 
                 <span>
                     Geometry + PBR
@@ -615,9 +612,7 @@
 
             <div class="format-card">
 
-                <strong>
-                    glTF
-                </strong>
+                <strong>glTF</strong>
 
                 <span>
                     Geometry + PBR
@@ -628,9 +623,7 @@
 
             <div class="format-card">
 
-                <strong>
-                    FBX
-                </strong>
+                <strong>FBX</strong>
 
                 <span>
                     Geometry + Materials
@@ -641,9 +634,7 @@
 
             <div class="format-card">
 
-                <strong>
-                    OBJ
-                </strong>
+                <strong>OBJ</strong>
 
                 <span>
                     Geometry + MTL
@@ -654,9 +645,7 @@
 
             <div class="format-card">
 
-                <strong>
-                    STL
-                </strong>
+                <strong>STL</strong>
 
                 <span>
                     Geometry
@@ -673,9 +662,7 @@
 
 
 
-<!-- ======================================================
-     REQUIREMENTS
-====================================================== -->
+<!-- REQUIREMENTS -->
 
 <section
     id="requirements"
@@ -755,9 +742,7 @@
 
             <div class="requirement">
 
-                <span>
-                    Operating System
-                </span>
+                <span>Operating System</span>
 
                 <strong>
                     Windows 10 / 11
@@ -768,9 +753,7 @@
 
             <div class="requirement">
 
-                <span>
-                    Architecture
-                </span>
+                <span>Architecture</span>
 
                 <strong>
                     64-bit
@@ -781,9 +764,7 @@
 
             <div class="requirement">
 
-                <span>
-                    Graphics
-                </span>
+                <span>Graphics</span>
 
                 <strong>
                     DirectX 12 or Vulkan
@@ -794,9 +775,7 @@
 
             <div class="requirement">
 
-                <span>
-                    VRAM
-                </span>
+                <span>VRAM</span>
 
                 <strong>
                     4 GB minimum
@@ -807,9 +786,7 @@
 
             <div class="requirement">
 
-                <span>
-                    Recommended VRAM
-                </span>
+                <span>Recommended VRAM</span>
 
                 <strong>
                     8 GB+
@@ -820,9 +797,7 @@
 
             <div class="requirement">
 
-                <span>
-                    RAM
-                </span>
+                <span>RAM</span>
 
                 <strong>
                     8 GB minimum · 16 GB recommended
@@ -843,9 +818,7 @@
 
 
 
-<!-- ======================================================
-     FOOTER
-====================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -899,7 +872,7 @@
 </footer>
 
 
-<script src="script.js"></script>
+<script src="script.js?v=6"></script>
 
 </body>
 
