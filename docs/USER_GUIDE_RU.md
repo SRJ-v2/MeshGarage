@@ -78,7 +78,7 @@ MeshGarage - бесконечная 2D доска для просмотра и �
 2. Мастер спросит папку установки, папку для кеша моделей и предложит галки ассоциаций файлов.
 3. Ассоциации `.meg` и `.meprj` (собственные проекты MeshGarage) включаются всегда. Ассоциации 3D-форматов (`.fbx`, `.obj`, `.glb`, `.gltf`, `.stl`)  по желанию, и они **не отбирают** формат у ваших основных программ: MeshGarage лишь добавляется в меню «Открыть с помощью».
 
-![MeshGarage main board](Cache_Folder_Setup.jpg)
+![Описание картинки](images/Cache_Folder_Setup.jpg).
 
 ### Вариант 2: portable
 
@@ -94,7 +94,7 @@ MeshGarage - бесконечная 2D доска для просмотра и �
 **Reset Global Lighting**
 
 
-![MeshGarage main board](Desk.png)
+![MeshGarage main board](images/Desk.png)
 
 
 ---
