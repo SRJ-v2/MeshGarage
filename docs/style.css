@@ -512,7 +512,10 @@ h1 span {
 
 .primary-button:hover {
     background:
-        #ffffff;
+        linear-gradient(
+            #ffffff,
+            #dce4ea
+        );
 }
 
 
