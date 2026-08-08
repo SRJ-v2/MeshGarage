@@ -19,7 +19,7 @@ Problems the application solves:
 - **evaluate and compare generated 3D models**;
 - **build a project workboard** from models, references, and notes.
 
-[SCREENSHOT: Board with several model cards, a couple of reference images, and a text note]
+![Описание картинки](images/meshgarage-preview.png)
 
 ### Five concepts everything is built around
 
