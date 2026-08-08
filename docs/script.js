@@ -5,6 +5,7 @@ const API_URL =
     `https://api.github.com/repos/${OWNER}/${REPO}/releases?per_page=100`;
 
 
+
 async function loadReleaseData() {
 
     try {
@@ -35,15 +36,21 @@ async function loadReleaseData() {
         if (!published.length) {
 
             throw new Error(
-                "No releases found"
+                "No published releases found"
             );
 
         }
 
 
+
+        /* Latest release */
+
         const latest =
             published[0];
 
+
+
+        /* Find installer */
 
         const installer =
             latest.assets.find(
@@ -54,6 +61,9 @@ async function loadReleaseData() {
             );
 
 
+
+        /* Find portable */
+
         const portable =
             latest.assets.find(
                 asset =>
@@ -63,7 +73,8 @@ async function loadReleaseData() {
             );
 
 
-        /* Version */
+
+        /* Display release name */
 
         document.getElementById(
             "version"
@@ -73,7 +84,7 @@ async function loadReleaseData() {
 
 
 
-        /* Download buttons */
+        /* Installer buttons */
 
         if (installer) {
 
@@ -81,6 +92,7 @@ async function loadReleaseData() {
                 "installer-download",
                 installer.browser_download_url
             );
+
 
             enableButton(
                 "installer-download-bottom",
@@ -90,12 +102,16 @@ async function loadReleaseData() {
         }
 
 
+
+        /* Portable buttons */
+
         if (portable) {
 
             enableButton(
                 "portable-download",
                 portable.browser_download_url
             );
+
 
             enableButton(
                 "portable-download-bottom",
@@ -111,35 +127,40 @@ async function loadReleaseData() {
         let totalDownloads = 0;
 
 
-        published.forEach(release => {
+        published.forEach(
+            release => {
 
-            release.assets.forEach(asset => {
+                release.assets.forEach(
+                    asset => {
 
-                const isInstaller =
-                    /setup.*\.exe$/i.test(
-                        asset.name
-                    );
-
-
-                const isPortable =
-                    /portable.*\.zip$/i.test(
-                        asset.name
-                    );
+                        const isInstaller =
+                            /setup.*\.exe$/i.test(
+                                asset.name
+                            );
 
 
-                if (
-                    isInstaller ||
-                    isPortable
-                ) {
+                        const isPortable =
+                            /portable.*\.zip$/i.test(
+                                asset.name
+                            );
 
-                    totalDownloads +=
-                        asset.download_count || 0;
 
-                }
+                        if (
+                            isInstaller ||
+                            isPortable
+                        ) {
 
-            });
+                            totalDownloads +=
+                                asset.download_count || 0;
 
-        });
+                        }
+
+                    }
+                );
+
+            }
+        );
+
 
 
         document.getElementById(
@@ -150,9 +171,14 @@ async function loadReleaseData() {
 
     }
 
+
     catch (error) {
 
-        console.error(error);
+
+        console.error(
+            "Unable to load MeshGarage release:",
+            error
+        );
 
 
         document.getElementById(
@@ -171,29 +197,37 @@ async function loadReleaseData() {
 }
 
 
+
+/* Enable download link */
+
 function enableButton(
-    id,
-    url
+    elementId,
+    downloadUrl
 ) {
 
-    const button =
-        document.getElementById(id);
+    const element =
+        document.getElementById(
+            elementId
+        );
 
 
-    if (!button) {
+    if (!element) {
+
         return;
+
     }
 
 
-    button.href =
-        url;
+    element.href =
+        downloadUrl;
 
 
-    button.classList.remove(
+    element.classList.remove(
         "disabled"
     );
 
 }
+
 
 
 loadReleaseData();
