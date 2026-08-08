@@ -1,16 +1,15 @@
 :root {
 
     --bg: #070a0d;
-    --bg-soft: #0a0e12;
 
     --panel: #0e1419;
-    --panel-light: #111920;
 
     --border: #202b34;
-    --border-light: #30404c;
 
     --text: #f2f5f7;
+
     --muted: #89939d;
+
     --dim: #59636e;
 
     --accent: #67d8ff;
@@ -18,9 +17,9 @@
 
 
 
-/* ------------------------------------------------
+/* ==================================================
    BASE
------------------------------------------------- */
+================================================== */
 
 * {
     box-sizing: border-box;
@@ -61,7 +60,9 @@ body {
 
 
 a {
+
     color: inherit;
+
     text-decoration: none;
 }
 
@@ -74,35 +75,28 @@ a {
             calc(100% - 48px)
         );
 
-    margin:
-        0 auto;
+    margin: 0 auto;
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        2;
+    z-index: 2;
 }
 
 
 
-/* ------------------------------------------------
+/* ==================================================
    BACKGROUND
------------------------------------------------- */
+================================================== */
 
 .background-grid {
 
-    position:
-        fixed;
+    position: fixed;
 
-    inset:
-        0;
+    inset: 0;
 
-    pointer-events:
-        none;
+    pointer-events: none;
 
-    opacity:
-        .14;
+    opacity: .14;
 
     background-image:
 
@@ -124,143 +118,114 @@ a {
         linear-gradient(
             to bottom,
             black,
-            transparent 78%
+            transparent 80%
         );
 }
 
 
 .background-glow {
 
-    position:
-        fixed;
+    position: fixed;
 
-    width:
-        650px;
+    width: 650px;
 
-    height:
-        650px;
+    height: 650px;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
-    filter:
-        blur(170px);
+    filter: blur(170px);
 
-    pointer-events:
-        none;
+    opacity: .09;
 
-    opacity:
-        .09;
+    pointer-events: none;
 }
 
 
 .glow-left {
 
-    top:
-        -300px;
+    top: -300px;
 
-    left:
-        -250px;
+    left: -250px;
 
-    background:
-        #44c8ff;
+    background: #44c8ff;
 }
 
 
 .glow-right {
 
-    right:
-        -350px;
+    right: -350px;
 
-    top:
-        250px;
+    top: 300px;
 
-    background:
-        #546cff;
+    background: #546cff;
 }
 
 
 
-/* ------------------------------------------------
+/* ==================================================
    HEADER
------------------------------------------------- */
+================================================== */
 
 .header {
 
-    position:
-        sticky;
+    position: sticky;
 
-    top:
-        0;
+    top: 0;
 
-    z-index:
-        100;
+    z-index: 100;
 
     background:
-        rgba(7,10,13,.78);
+        rgba(7,10,13,.80);
 
     backdrop-filter:
         blur(18px);
 
     border-bottom:
-        1px solid rgba(255,255,255,.065);
+        1px solid
+        rgba(255,255,255,.065);
 }
 
 
 .header-inner {
 
-    height:
-        72px;
+    height: 72px;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        space-between;
+    justify-content: space-between;
 }
 
 
 .brand {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        11px;
+    gap: 11px;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
-    font-size:
-        17px;
+    font-size: 17px;
 }
 
 
 .brand-mark {
 
-    width:
-        30px;
+    width: 30px;
 
-    height:
-        30px;
+    height: 30px;
 
-    display:
-        inline-grid;
+    display: inline-grid;
 
-    place-items:
-        center;
+    place-items: center;
 
     border:
         1px solid #344550;
 
-    border-radius:
-        7px;
+    border-radius: 7px;
 
     background:
         linear-gradient(
@@ -269,30 +234,23 @@ a {
             #0c1116
         );
 
-    color:
-        var(--accent);
+    color: var(--accent);
 
-    font-size:
-        12px;
+    font-size: 12px;
 }
 
 
 .nav {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        27px;
+    gap: 27px;
 
-    color:
-        #7d8994;
+    color: #7d8994;
 
-    font-size:
-        13px;
+    font-size: 13px;
 }
 
 
@@ -305,56 +263,67 @@ a {
 
 .nav a:hover {
 
-    color:
-        white;
+    color: white;
 }
 
 
 
-/* ------------------------------------------------
+/* ==================================================
    HERO
------------------------------------------------- */
+================================================== */
 
 .hero {
 
     padding:
-        110px 0
-        120px;
+        90px 0
+        115px;
 
     border-bottom:
-        1px solid rgba(255,255,255,.065);
+        1px solid
+        rgba(255,255,255,.065);
 }
 
 
-.hero-grid {
+.hero-layout {
 
-    display:
-        grid;
+    display: flex;
 
-    grid-template-columns:
-        .73fr 1.27fr;
+    flex-direction: column;
 
-    gap:
-        65px;
+    align-items: center;
+}
 
-    align-items:
-        center;
+
+
+/* TITLE */
+
+.hero-heading {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin:
+        0 auto
+        52px;
+
+    text-align: center;
 }
 
 
 .status {
 
-    display:
-        inline-flex;
+    display: inline-flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        8px;
+    gap: 8px;
 
     padding:
         8px 12px;
+
+    margin-bottom:
+        27px;
 
     background:
         rgba(14,20,25,.75);
@@ -381,14 +350,11 @@ a {
 
 .status-dot {
 
-    width:
-        7px;
+    width: 7px;
 
-    height:
-        7px;
+    height: 7px;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
         var(--accent);
@@ -401,18 +367,24 @@ a {
 
 h1 {
 
+    max-width:
+        1050px;
+
     margin:
-        27px 0
-        24px;
+        0 auto;
 
     font-size:
-        clamp(54px, 5.2vw, 78px);
+        clamp(
+            58px,
+            7vw,
+            96px
+        );
 
     line-height:
-        .98;
+        .97;
 
     letter-spacing:
-        -4.5px;
+        -5px;
 }
 
 
@@ -423,14 +395,116 @@ h1 span {
 }
 
 
+
+/* ==================================================
+   SCREENSHOT
+================================================== */
+
+.preview-container {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width:
+        1180px;
+}
+
+
+.preview-light {
+
+    position: absolute;
+
+    left: 8%;
+
+    right: 8%;
+
+    top: 10%;
+
+    bottom: 0;
+
+    background:
+        #57c9ff;
+
+    opacity: .10;
+
+    filter:
+        blur(140px);
+
+    pointer-events: none;
+}
+
+
+.preview-frame {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border:
+        1px solid #30414d;
+
+    border-radius:
+        17px;
+
+    background:
+        #202020;
+
+    box-shadow:
+
+        0 50px 110px
+        rgba(0,0,0,.52),
+
+        0 0 0 1px
+        rgba(255,255,255,.025)
+        inset;
+}
+
+
+.preview-frame img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+}
+
+
+
+/* ==================================================
+   INFO UNDER SCREENSHOT
+================================================== */
+
+.hero-info {
+
+    width: 100%;
+
+    max-width:
+        760px;
+
+    margin:
+        55px auto 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
 .hero-description {
 
     max-width:
-        540px;
+        700px;
 
     margin:
-        0 0
-        20px;
+        0 auto 21px;
 
     color:
         #909aa4;
@@ -439,20 +513,19 @@ h1 span {
         18px;
 
     line-height:
-        1.65;
+        1.7;
 }
 
 
 .platform {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        8px;
+    justify-content: center;
+
+    gap: 8px;
 
     color:
         #65717b;
@@ -480,9 +553,9 @@ h1 span {
 
 
 
-/* ------------------------------------------------
+/* ==================================================
    DOWNLOAD BUTTONS
------------------------------------------------- */
+================================================== */
 
 .download-buttons,
 .requirements-download {
@@ -490,30 +563,29 @@ h1 span {
     margin-top:
         34px;
 
-    display:
-        flex;
+    display: flex;
 
-    gap:
-        12px;
+    justify-content: center;
+
+    gap: 12px;
 }
 
 
 .button {
 
     min-width:
-        195px;
+        210px;
 
     padding:
-        14px 20px;
+        15px 21px;
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
-    gap:
-        4px;
+    gap: 4px;
+
+    text-align: left;
 
     border-radius:
         9px;
@@ -598,32 +670,29 @@ h1 span {
 
 .disabled {
 
-    opacity:
-        .5;
+    opacity: .5;
 
-    pointer-events:
-        none;
+    pointer-events: none;
 }
 
 
 
-/* ------------------------------------------------
+/* ==================================================
    RELEASE INFO
------------------------------------------------- */
+================================================== */
 
 .release-info {
 
     margin-top:
-        22px;
+        23px;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        11px;
+    justify-content: center;
+
+    gap: 11px;
 
     color:
         #56616b;
@@ -642,11 +711,9 @@ h1 span {
 
 .release-divider {
 
-    width:
-        3px;
+    width: 3px;
 
-    height:
-        3px;
+    height: 3px;
 
     background:
         #354049;
@@ -657,84 +724,9 @@ h1 span {
 
 
 
-/* ------------------------------------------------
-   APPLICATION PREVIEW
------------------------------------------------- */
-
-.preview-container {
-
-    position:
-        relative;
-}
-
-
-.preview-light {
-
-    position:
-        absolute;
-
-    inset:
-        15%;
-
-    background:
-        #57c9ff;
-
-    opacity:
-        .13;
-
-    filter:
-        blur(110px);
-}
-
-
-.preview-frame {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    border:
-        1px solid #2f3e49;
-
-    border-radius:
-        16px;
-
-    background:
-        #121212;
-
-    box-shadow:
-
-        0 45px 90px
-        rgba(0,0,0,.48),
-
-        0 0 0 1px
-        rgba(255,255,255,.025)
-        inset;
-}
-
-
-.preview-frame img {
-
-    display:
-        block;
-
-    width:
-        100%;
-
-    height:
-        auto;
-
-    object-fit:
-        cover;
-}
-
-
-
-/* ------------------------------------------------
-   STRIP
------------------------------------------------- */
+/* ==================================================
+   FEATURE STRIP
+================================================== */
 
 .feature-strip {
 
@@ -742,7 +734,8 @@ h1 span {
         27px 0;
 
     border-bottom:
-        1px solid rgba(255,255,255,.065);
+        1px solid
+        rgba(255,255,255,.065);
 
     background:
         rgba(9,13,17,.48);
@@ -751,21 +744,19 @@ h1 span {
 
 .strip-grid {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:
-        12px;
+    gap: 12px;
 }
 
 
 .strip-item {
 
     padding:
-        17px 19px;
+        18px 19px;
 
     border:
         1px solid #202a32;
@@ -776,14 +767,11 @@ h1 span {
     background:
         rgba(14,19,24,.62);
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
-    gap:
-        6px;
+    gap: 6px;
 }
 
 
@@ -808,9 +796,9 @@ h1 span {
 
 
 
-/* ------------------------------------------------
-   GENERIC SECTION
------------------------------------------------- */
+/* ==================================================
+   SECTIONS
+================================================== */
 
 .section {
 
@@ -818,14 +806,14 @@ h1 span {
         120px 0;
 
     border-bottom:
-        1px solid rgba(255,255,255,.065);
+        1px solid
+        rgba(255,255,255,.065);
 }
 
 
 .eyebrow {
 
-    display:
-        block;
+    display: block;
 
     margin-bottom:
         17px;
@@ -846,11 +834,14 @@ h1 span {
 
 h2 {
 
-    margin:
-        0;
+    margin: 0;
 
     font-size:
-        clamp(38px,5vw,57px);
+        clamp(
+            38px,
+            5vw,
+            57px
+        );
 
     line-height:
         1.07;
@@ -862,17 +853,14 @@ h2 {
 
 .section-header {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         1.4fr .6fr;
 
-    gap:
-        80px;
+    gap: 80px;
 
-    align-items:
-        end;
+    align-items: end;
 
     margin-bottom:
         54px;
@@ -881,8 +869,7 @@ h2 {
 
 .section-header p {
 
-    margin:
-        0;
+    margin: 0;
 
     color:
         #727e88;
@@ -896,20 +883,18 @@ h2 {
 
 
 
-/* ------------------------------------------------
+/* ==================================================
    FEATURE CARDS
------------------------------------------------- */
+================================================== */
 
 .feature-grid {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:
-        14px;
+    gap: 14px;
 }
 
 
@@ -918,11 +903,9 @@ h2 {
     min-height:
         290px;
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
     padding:
         27px;
@@ -960,17 +943,13 @@ h2 {
 
 .feature-icon {
 
-    width:
-        38px;
+    width: 38px;
 
-    height:
-        38px;
+    height: 38px;
 
-    display:
-        grid;
+    display: grid;
 
-    place-items:
-        center;
+    place-items: center;
 
     margin-bottom:
         37px;
@@ -1001,8 +980,7 @@ h2 {
 
 .feature-card p {
 
-    margin:
-        0;
+    margin: 0;
 
     max-width:
         330px;
@@ -1020,14 +998,11 @@ h2 {
 
 .feature-number {
 
-    position:
-        absolute;
+    position: absolute;
 
-    right:
-        22px;
+    right: 22px;
 
-    top:
-        22px;
+    top: 22px;
 
     color:
         #303b44;
@@ -1040,22 +1015,20 @@ h2 {
 }
 
 
+
+/* PBR TAGS */
+
 .feature-tags {
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        27px;
+    left: 27px;
 
-    bottom:
-        25px;
+    bottom: 25px;
 
-    display:
-        flex;
+    display: flex;
 
-    gap:
-        6px;
+    gap: 6px;
 }
 
 
@@ -1083,36 +1056,28 @@ h2 {
 
 .udim-preview {
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        27px;
+    left: 27px;
 
-    bottom:
-        25px;
+    bottom: 25px;
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         repeat(4,42px);
 
-    gap:
-        5px;
+    gap: 5px;
 }
 
 
 .udim-preview span {
 
-    height:
-        40px;
+    height: 40px;
 
-    display:
-        grid;
+    display: grid;
 
-    place-items:
-        center;
+    place-items: center;
 
     border:
         1px solid #2b3a45;
@@ -1129,24 +1094,19 @@ h2 {
 
 
 
-/* PERFORMANCE */
+/* HIGH POLY */
 
 .performance-bar {
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        27px;
+    left: 27px;
 
-    right:
-        27px;
+    right: 27px;
 
-    bottom:
-        28px;
+    bottom: 28px;
 
-    height:
-        4px;
+    height: 4px;
 
     background:
         #182129;
@@ -1154,23 +1114,20 @@ h2 {
     border-radius:
         5px;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 }
 
 
 .performance-bar span {
 
-    display:
-        block;
+    display: block;
 
-    width:
-        78%;
+    width: 78%;
 
-    height:
-        100%;
+    height: 100%;
 
     background:
+
         linear-gradient(
             90deg,
             #416b7e,
@@ -1184,30 +1141,23 @@ h2 {
 
 .reference-preview {
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        27px;
+    left: 27px;
 
-    bottom:
-        25px;
+    bottom: 25px;
 
-    display:
-        flex;
+    display: flex;
 
-    gap:
-        7px;
+    gap: 7px;
 }
 
 
 .reference-preview div {
 
-    width:
-        67px;
+    width: 67px;
 
-    height:
-        47px;
+    height: 47px;
 
     border:
         1px solid #38454e;
@@ -1216,6 +1166,7 @@ h2 {
         4px;
 
     background:
+
         linear-gradient(
             135deg,
             #55414a,
@@ -1227,6 +1178,7 @@ h2 {
 .reference-preview div:last-child {
 
     background:
+
         linear-gradient(
             135deg,
             #3b4c55,
@@ -1240,14 +1192,11 @@ h2 {
 
 .archive-preview {
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        27px;
+    left: 27px;
 
-    bottom:
-        25px;
+    bottom: 25px;
 
     padding:
         11px 16px;
@@ -1273,9 +1222,9 @@ h2 {
 
 
 
-/* ------------------------------------------------
+/* ==================================================
    FORMATS
------------------------------------------------- */
+================================================== */
 
 .formats-section {
 
@@ -1289,14 +1238,12 @@ h2 {
     margin-top:
         53px;
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         repeat(5,1fr);
 
-    gap:
-        12px;
+    gap: 12px;
 }
 
 
@@ -1308,11 +1255,9 @@ h2 {
     padding:
         23px;
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
     justify-content:
         space-between;
@@ -1354,23 +1299,20 @@ h2 {
 
 
 
-/* ------------------------------------------------
+/* ==================================================
    REQUIREMENTS
------------------------------------------------- */
+================================================== */
 
 .requirements-layout {
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap:
-        90px;
+    gap: 90px;
 
-    align-items:
-        start;
+    align-items: start;
 }
 
 
@@ -1395,15 +1337,14 @@ h2 {
 
 .requirements-download {
 
-    margin-top:
-        35px;
+    justify-content:
+        flex-start;
 }
 
 
 .requirements-card {
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
     border:
         1px solid #26333d;
@@ -1421,8 +1362,7 @@ h2 {
     padding:
         20px 23px;
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         160px 1fr;
@@ -1434,8 +1374,7 @@ h2 {
 
 .requirement:last-child {
 
-    border-bottom:
-        0;
+    border-bottom: 0;
 }
 
 
@@ -1463,9 +1402,9 @@ h2 {
 
 
 
-/* ------------------------------------------------
+/* ==================================================
    FOOTER
------------------------------------------------- */
+================================================== */
 
 footer {
 
@@ -1476,11 +1415,9 @@ footer {
 
 .footer-inner {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
     justify-content:
         space-between;
@@ -1489,14 +1426,11 @@ footer {
 
 .footer-brand {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        10px;
+    gap: 10px;
 
     color:
         #707c86;
@@ -1508,11 +1442,9 @@ footer {
 
 .footer-links {
 
-    display:
-        flex;
+    display: flex;
 
-    gap:
-        25px;
+    gap: 25px;
 
     color:
         #57636d;
@@ -1530,25 +1462,11 @@ footer {
 
 
 
-/* ------------------------------------------------
-   RESPONSIVE
------------------------------------------------- */
+/* ==================================================
+   TABLET
+================================================== */
 
 @media(max-width: 1050px) {
-
-    .hero-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .hero-content {
-
-        max-width:
-            720px;
-    }
 
 
     .section-header {
@@ -1556,8 +1474,7 @@ footer {
         grid-template-columns:
             1fr;
 
-        gap:
-            25px;
+        gap: 25px;
     }
 
 
@@ -1577,6 +1494,11 @@ footer {
 }
 
 
+
+/* ==================================================
+   MOBILE
+================================================== */
+
 @media(max-width: 700px) {
 
 
@@ -1589,28 +1511,64 @@ footer {
 
     .nav {
 
-        display:
-            none;
+        display: none;
     }
 
 
     .hero {
 
         padding:
-            75px 0
+            65px 0
             80px;
     }
 
 
+    .hero-heading {
+
+        margin-bottom:
+            35px;
+    }
+
+
     h1 {
+
+        font-size:
+            clamp(
+                45px,
+                13vw,
+                66px
+            );
 
         letter-spacing:
             -3px;
     }
 
 
+    .preview-frame {
+
+        border-radius:
+            10px;
+    }
+
+
+    .hero-info {
+
+        margin-top:
+            36px;
+    }
+
+
+    .hero-description {
+
+        font-size:
+            16px;
+    }
+
+
     .download-buttons,
     .requirements-download {
+
+        width: 100%;
 
         flex-direction:
             column;
@@ -1619,15 +1577,13 @@ footer {
 
     .button {
 
-        width:
-            100%;
+        width: 100%;
     }
 
 
     .release-info {
 
-        flex-wrap:
-            wrap;
+        flex-wrap: wrap;
     }
 
 
@@ -1657,8 +1613,7 @@ footer {
         grid-template-columns:
             1fr;
 
-        gap:
-            45px;
+        gap: 45px;
     }
 
 
@@ -1667,8 +1622,7 @@ footer {
         grid-template-columns:
             1fr;
 
-        gap:
-            7px;
+        gap: 7px;
     }
 
 
@@ -1680,8 +1634,7 @@ footer {
         align-items:
             flex-start;
 
-        gap:
-            25px;
+        gap: 25px;
     }
 
 
@@ -1690,8 +1643,7 @@ footer {
         flex-direction:
             column;
 
-        gap:
-            12px;
+        gap: 12px;
     }
 
 }
