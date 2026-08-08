@@ -731,68 +731,6 @@ h1 span {
 }
 
 
-.preview-caption {
-
-    position:
-        absolute;
-
-    left:
-        15px;
-
-    bottom:
-        15px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        8px;
-
-    padding:
-        7px 10px;
-
-    border:
-        1px solid rgba(255,255,255,.12);
-
-    background:
-        rgba(5,8,10,.78);
-
-    backdrop-filter:
-        blur(12px);
-
-    border-radius:
-        7px;
-
-    color:
-        #8d989f;
-
-    font-size:
-        9px;
-}
-
-
-.caption-dot {
-
-    width:
-        5px;
-
-    height:
-        5px;
-
-    background:
-        #66d8ff;
-
-    border-radius:
-        50%;
-
-    box-shadow:
-        0 0 8px #66d8ff;
-}
-
-
 
 /* ------------------------------------------------
    STRIP
