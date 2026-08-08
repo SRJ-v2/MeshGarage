@@ -1,4 +1,6 @@
-# MeshGarage - User Guide
+---
+title: MeshGarage User Guide
+---
 
 Application version: 0.9.0 Beta
 
