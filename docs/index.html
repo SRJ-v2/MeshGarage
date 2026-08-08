@@ -14,7 +14,7 @@
         content="MeshGarage — an infinite 2D workspace for browsing, inspecting and comparing 3D assets."
     >
 
-    <title>MeshGarage</title>
+    <title>MeshGarage — 3D Asset Workspace</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -27,7 +27,9 @@
 <div class="background-glow glow-right"></div>
 
 
-<!-- HEADER -->
+<!-- ======================================================
+     HEADER
+====================================================== -->
 
 <header class="header">
 
@@ -61,7 +63,7 @@
             </a>
 
             <a
-                href="https://github.com/SRJ-v2/MeshGarage/blob/main/docs/USER_GUIDE_EN.md"
+                href="USER_GUIDE_EN.md"
                 target="_blank"
             >
                 Documentation
@@ -85,16 +87,18 @@
 <main>
 
 
-<!-- HERO -->
+<!-- ======================================================
+     HERO
+====================================================== -->
 
 <section class="hero">
 
-    <div class="container hero-grid">
+    <div class="container hero-layout">
 
 
-        <!-- TEXT -->
+        <!-- TITLE -->
 
-        <div class="hero-content">
+        <div class="hero-heading">
 
             <div class="status">
 
@@ -107,18 +111,44 @@
 
             <h1>
 
-                Browse, inspect
-                and compare
+                Browse, inspect and compare
                 <span>3D assets.</span>
 
             </h1>
 
+        </div>
+
+
+
+        <!-- REAL APPLICATION SCREENSHOT -->
+
+        <div class="preview-container">
+
+            <div class="preview-light"></div>
+
+
+            <div class="preview-frame">
+
+                <img
+                    src="images/meshgarage-preview.png"
+                    alt="MeshGarage application interface"
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- INFO -->
+
+        <div class="hero-info">
 
             <p class="hero-description">
 
-                MeshGarage is an infinite 2D workspace
-                where 3D models, references, textures
-                and notes can live together.
+                MeshGarage is an infinite 2D workspace where
+                3D models, references, textures and notes
+                can live together.
 
             </p>
 
@@ -138,6 +168,7 @@
                 64-bit only
 
             </div>
+
 
 
             <div class="download-buttons">
@@ -178,6 +209,7 @@
             </div>
 
 
+
             <div class="release-info">
 
                 <span id="version">
@@ -202,34 +234,15 @@
         </div>
 
 
-
-        <!-- REAL APPLICATION SCREENSHOT -->
-
-        <div class="preview-container">
-
-            <div class="preview-light"></div>
-
-
-            <div class="preview-frame">
-
-                <img
-                    src="images/meshgarage-preview.png"
-                    alt="MeshGarage application interface"
-                >
-
-
-            </div>
-
-        </div>
-
-
     </div>
 
 </section>
 
 
 
-<!-- SHORT FEATURE STRIP -->
+<!-- ======================================================
+     SHORT INFO
+====================================================== -->
 
 <section class="feature-strip">
 
@@ -256,7 +269,7 @@
             </strong>
 
             <span>
-                Millions of polygons
+                Heavy model support
             </span>
 
         </div>
@@ -282,7 +295,7 @@
             </strong>
 
             <span>
-                Texture workflow
+                Texture inspection
             </span>
 
         </div>
@@ -294,7 +307,9 @@
 
 
 
-<!-- FEATURES -->
+<!-- ======================================================
+     FEATURES
+====================================================== -->
 
 <section
     id="features"
@@ -306,11 +321,13 @@
 
         <div class="section-header">
 
+
             <div>
 
                 <span class="eyebrow">
                     FEATURES
                 </span>
+
 
                 <h2>
 
@@ -325,11 +342,12 @@
             <p>
 
                 Open multiple models at once,
-                inspect their geometry and materials,
-                compare them under the same lighting,
+                inspect geometry and materials,
+                compare assets under the same lighting,
                 and keep references nearby.
 
             </p>
+
 
         </div>
 
@@ -338,10 +356,16 @@
         <div class="feature-grid">
 
 
+            <!-- 01 -->
+
             <article class="feature-card">
 
                 <div class="feature-icon">
                     ◫
+                </div>
+
+                <div class="feature-number">
+                    01
                 </div>
 
                 <h3>
@@ -350,23 +374,25 @@
 
                 <p>
 
-                    Arrange many 3D models freely
-                    on one continuous 2D workspace.
+                    Arrange multiple 3D models freely
+                    on one continuous visual workspace.
 
                 </p>
-
-                <div class="feature-number">
-                    01
-                </div>
 
             </article>
 
 
 
+            <!-- 02 -->
+
             <article class="feature-card">
 
                 <div class="feature-icon">
                     ◈
+                </div>
+
+                <div class="feature-number">
+                    02
                 </div>
 
                 <h3>
@@ -381,6 +407,7 @@
 
                 </p>
 
+
                 <div class="feature-tags">
 
                     <span>Clay</span>
@@ -389,18 +416,20 @@
 
                 </div>
 
-                <div class="feature-number">
-                    02
-                </div>
-
             </article>
 
 
+
+            <!-- 03 -->
 
             <article class="feature-card">
 
                 <div class="feature-icon">
                     ▦
+                </div>
+
+                <div class="feature-number">
+                    03
                 </div>
 
                 <h3>
@@ -411,9 +440,10 @@
 
                     Inspect UV layouts,
                     multiple UV channels
-                    and complete UDIM sets.
+                    and complete UDIM texture sets.
 
                 </p>
+
 
                 <div class="udim-preview">
 
@@ -424,18 +454,20 @@
 
                 </div>
 
-                <div class="feature-number">
-                    03
-                </div>
-
             </article>
 
 
+
+            <!-- 04 -->
 
             <article class="feature-card">
 
                 <div class="feature-icon">
                     △
+                </div>
+
+                <div class="feature-number">
+                    04
                 </div>
 
                 <h3>
@@ -444,11 +476,12 @@
 
                 <p>
 
-                    Keep sculpted models,
-                    scans and other heavy geometry
-                    open together on the board.
+                    Keep sculpted models, scans
+                    and other heavy geometry
+                    open together on one board.
 
                 </p>
+
 
                 <div class="performance-bar">
 
@@ -456,18 +489,20 @@
 
                 </div>
 
-                <div class="feature-number">
-                    04
-                </div>
-
             </article>
 
 
+
+            <!-- 05 -->
 
             <article class="feature-card">
 
                 <div class="feature-icon">
                     ▧
+                </div>
+
+                <div class="feature-number">
+                    05
                 </div>
 
                 <h3>
@@ -477,10 +512,11 @@
                 <p>
 
                     Place concept art,
-                    reference images and text notes
+                    image references and notes
                     directly beside your models.
 
                 </p>
+
 
                 <div class="reference-preview">
 
@@ -489,18 +525,20 @@
 
                 </div>
 
-                <div class="feature-number">
-                    05
-                </div>
-
             </article>
 
 
+
+            <!-- 06 -->
 
             <article class="feature-card">
 
                 <div class="feature-icon">
                     ⤓
+                </div>
+
+                <div class="feature-number">
+                    06
                 </div>
 
                 <h3>
@@ -509,20 +547,17 @@
 
                 <p>
 
-                    Package your board,
+                    Package the board,
                     models and textures
                     into a transferable project archive.
 
                 </p>
 
+
                 <div class="archive-preview">
 
                     PROJECT.MEPRJ
 
-                </div>
-
-                <div class="feature-number">
-                    06
                 </div>
 
             </article>
@@ -536,7 +571,9 @@
 
 
 
-<!-- FORMATS -->
+<!-- ======================================================
+     FORMATS
+====================================================== -->
 
 <section
     id="formats"
@@ -557,6 +594,7 @@
             directly onto the board.
 
         </h2>
+
 
 
         <div class="formats-grid">
@@ -635,7 +673,9 @@
 
 
 
-<!-- REQUIREMENTS -->
+<!-- ======================================================
+     REQUIREMENTS
+====================================================== -->
 
 <section
     id="requirements"
@@ -660,12 +700,15 @@
             <p>
 
                 The current public beta
-                is available for Windows 10 and Windows 11.
+                is available for Windows 10
+                and Windows 11.
 
             </p>
 
 
+
             <div class="requirements-download">
+
 
                 <a
                     id="installer-download-bottom"
@@ -699,6 +742,7 @@
                     </small>
 
                 </a>
+
 
             </div>
 
@@ -799,7 +843,9 @@
 
 
 
-<!-- FOOTER -->
+<!-- ======================================================
+     FOOTER
+====================================================== -->
 
 <footer>
 
@@ -817,11 +863,12 @@
         </div>
 
 
+
         <div class="footer-links">
 
 
             <a
-                href="https://github.com/SRJ-v2/MeshGarage/blob/main/docs/USER_GUIDE_EN.md"
+                href="USER_GUIDE_EN.md"
                 target="_blank"
             >
                 English Guide
@@ -829,7 +876,7 @@
 
 
             <a
-                href="https://github.com/SRJ-v2/MeshGarage/blob/main/docs/USER_GUIDE_RU.md"
+                href="USER_GUIDE_RU.md"
                 target="_blank"
             >
                 Русское руководство
@@ -855,4 +902,5 @@
 <script src="script.js"></script>
 
 </body>
+
 </html>
