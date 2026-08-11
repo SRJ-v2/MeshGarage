@@ -73,6 +73,8 @@ For normal use - several models with 2K textures - 4 GB of VRAM is enough. More 
 2. The setup wizard will ask for the installation folder and model cache folder, and will offer file association options.
 3. Associations for `.meg` and `.meprj` (MeshGarage's own project formats) are always enabled. Associations for 3D formats (`.fbx`, `.obj`, `.glb`, `.gltf`, `.stl`) are optional, and they **do not take ownership** of those formats from your main applications: MeshGarage is only added to the **Open with** menu.
 
+![Описание картинки](images/Cache_Folder_Setup.jpg)
+
 ### Option 2: Portable
 
 1. Extract `MeshGarage-0.9.0-portable.zip` into any folder where you have write access.
@@ -87,7 +89,7 @@ On subsequent launches, MeshGarage automatically restores the board settings exa
 **Reset Background**  
 **Reset Global Lighting**
 
-[SCREENSHOT: Empty board after first launch, with the File control and ? button labeled]
+![MeshGarage main board](images/Desk.png)
 
 ---
 
@@ -104,7 +106,8 @@ Go through this once. Everything else will be intuitive afterward.
 
 Done. The following sections cover each topic in detail.
 
-[SCREENSHOT: Model card with its Card Menu open next to it]
+![MeshGarage main board](images/import_models.png)
+
 
 ---
 
@@ -136,11 +139,15 @@ Almost all controls are grouped into two context menus:
 - **Right-click a card** → Card Menu: shading, materials, texture slots, UV, shadows. The title shows the model name, followed by vertex/triangle counts and dimensions.
 - **Right-click an empty area** → Board Menu: background color, grid, vignette, and studio lighting.
 
+![MeshGarage main board](images/Menuts.png)
+
+
 Both menus are floating windows: you can drag them by the title bar, resize them from the edge, and **pin them** with the pin icon. A pinned menu stays open while you work with the board.
 
 **Ctrl + mouse wheel** over a menu changes the scale of its contents.
 
-[SCREENSHOT: Card Menu on the left and Board Menu on the right, with the pin icon labeled on both]
+![MeshGarage main board](images/Size_Menu.png)
+
 
 ---
 
@@ -199,7 +206,7 @@ If the file does not contain authored normals - for example scans, STL files, or
 
 > **Note.** MeshGarage does not modify models that already contain UVs, normals, or textures. All optimizations happen only on the rendering side.
 
-[SCREENSHOT: One model shown in four views: Clay, PBR, Normals, Clay+Wireframe]
+![MeshGarage main board](images/3_Views.png)
 
 ---
 
@@ -221,6 +228,9 @@ Lighting in MeshGarage is **shared across the entire board**. All models are lit
 
 ### More Precise Lighting Controls in the Board Menu
 
+![MeshGarage main board](images/Light.png)
+
+
 Right-click an empty area of the board. In the **Studio Lights** section you will find three panels: **Key Light / Fill Light / Rim Light**. Each has a position Gizmo, light intensity, and light color controls. **Reset Global Lighting** restores the default lighting setup.
 
 > **Tip.** A useful combination is a warm Key Light + cool Fill Light + neutral Rim Light. If you need to evaluate texture colors accurately, set all lights to white.
@@ -236,6 +246,9 @@ To add depth to models, you can enable proper contact AO shadows calculated usin
 3. **RT Shadow Strength** - shadow density.
 4. **RT Shadow Color** - shadow color.
 
+![MeshGarage main board](images/RT_Shadows.png)
+
+
 Shadows are calculated separately for each card and recalculated when the model rotates.
 
 > **Note.** It is better to keep this disabled when quickly browsing dozens of models.
@@ -249,7 +262,7 @@ An alternative option for real-time AO shadows uses the GTAO algorithm. The opti
 - **AO Radius** (0.05–3) - how far the occlusion extends from each point: a small radius creates narrow shadows in tight gaps and folds, while a large radius creates broader shading in large cavities.
 - **AO Contrast** (0.2–4) - sharpness of the occlusion boundary: higher values produce harder shadow edges.
 
-[SCREENSHOT: Board Menu with the three Studio Lights panels; next to it, a card with RT Shadow enabled]
+![MeshGarage main board](images/GTAO_Shadows.png)
 
 ---
 
@@ -263,6 +276,9 @@ There are eight slots: **Albedo, Normal, Metallic, Roughness, AO, Emissive, Alph
 
 Otherwise, texture maps can be dragged directly into slots with the mouse, or you can click a slot and choose a file from disk.
 
+![MeshGarage main board](images/Textures_slots.png)
+
+
 Each slot has:
 
 - a **checkbox** - temporarily disables the map without losing its path. This is a quick way to see exactly what a normal map contributes: turn it off, turn it back on, compare;
@@ -271,9 +287,14 @@ Each slot has:
 - a **UV channel** selector (UV0/UV1/UV2) - selects which UV layout is used for the loaded textures. Each UV channel has its own texture slots. If the model contains more than one UV channel, **Texture Slots** shows a separate tab for each channel;
 - **on board** - enables display of the texture on the board as a node connected to the model.
 
+![MeshGarage main board](images/on_board.png)
+
+
 If the model contains several materials, the menu shows a tab for each one. The green edge of a tab is a button that hides the geometry using that material.
 
-[SCREENSHOT: Options with examples]
+![MeshGarage main board](images/Materials_2.png)
+![MeshGarage main board](images/Materials_off.png)
+
 
 ### Packed Textures (ORM)
 
@@ -304,6 +325,8 @@ UV tools appear only for models that contain a UV layout.
 
 If a model has multiple UV channels (for example, a lightmap or a detail layer), they are displayed as separate tabs. Each tab has a green toggle on the right. When enabled, that UV channel is always displayed on top of the previous ones. Multiple UV channels are often used for decals or baked lighting.
 
+![MeshGarage main board](images/UVChannels.png)
+
 
 
 ### UDIM
@@ -314,7 +337,8 @@ A **Manual UDIM** checkbox also appears under each slot. When enabled, the slot 
 
 > **Note.** If UV islands are scattered far outside the tiles without any consistent system, MeshGarage treats the layout as unpacked and hides the UDIM tools to avoid showing meaningless controls.
 
-[SCREENSHOT: Card with Show UV enabled and a grid of UDIM nodes; the slot shows a UDIM ×4 badge]
+![MeshGarage main board](images/UDIM.png)
+
 
 ---
 
@@ -349,7 +373,8 @@ You can also drag raster images onto the board. For example, use them to compare
 
 If you paste text onto the board using **Ctrl+V**, a note is created automatically.
 
-[SCREENSHOT: Outliner on the left with one hidden model part; reference image and note on the board]
+![MeshGarage main board](images/Text.png)
+
 
 ---
 
@@ -366,7 +391,6 @@ Open the menu by clicking **File** in the upper-left corner.
 
 To open a project, choose **File → Open Project or Model...**, double-click the file in File Explorer, or simply drag a `.meg` / `.meprj` file into the application window. Before replacing the current board, the application asks for confirmation.
 
-[SCREENSHOT: File menu: Open Project or Model / Save File / Save Project / Clear Cache]
 
 ---
 
