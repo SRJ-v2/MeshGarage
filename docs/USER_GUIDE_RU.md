@@ -303,7 +303,7 @@
 
 Если у модели несколько материалов, в меню будет вкладка для каждого; зелёный край вкладки это переключатель который скрывает и показывает геометрию с текущим материалом.
 
-![MeshGarage main board](images/Materials_2,png)
+![MeshGarage main board](images/Materials_2.png)
 ![MeshGarage main board](images/Materials_off.png)
 
 
