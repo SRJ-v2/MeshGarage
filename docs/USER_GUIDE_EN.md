@@ -302,7 +302,9 @@ UV tools appear only for models that contain a UV layout.
 2. A node containing the UV layout appears on the board next to the card, connected to it by a line.
 3. Nodes are regular board objects: move them with the left mouse button and resize them by dragging the corners.
 
-If a model contains several UV channels - for example a lightmap or detail layer - they are shown as tabs.
+If a model has multiple UV channels (for example, a lightmap or a detail layer), they are displayed as separate tabs. Each tab has a green toggle on the right. When enabled, that UV channel is always displayed on top of the previous ones. Multiple UV channels are often used for decals or baked lighting.
+
+
 
 ### UDIM
 
