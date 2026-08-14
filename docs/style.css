@@ -17,7 +17,7 @@
     box-sizing: border-box;
 }
 
-
+а
 html {
     scroll-behavior: smooth;
 }
@@ -1166,48 +1166,71 @@ h2 {
    REQUIREMENTS
 ================================================== */
 
-.requirements-layout {
+.requirements-header {
+    max-width: 760px;
+
+    margin-bottom: 45px;
+}
+
+
+.requirements-header p {
+    max-width: 620px;
+
+    margin: 22px 0 0;
+
+    color: #717d87;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+.requirements-card {
+    width: 100%;
+
+    overflow: hidden;
+
+    border: 1px solid #26333d;
+
+    border-radius: 15px;
+
+    background: #0d1217;
+}
+
+
+.requirement {
+    padding: 22px 25px;
+
     display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 220px 1fr;
 
-    gap: 90px;
+    gap: 30px;
 
-    align-items: start;
+    border-bottom: 1px solid #222d35;
 }
 
 
-.requirements-title p {
-    margin:
-        24px 0 0;
-
-    max-width:
-        450px;
-
-    color:
-        #717d87;
-
-    font-size:
-        14px;
-
-    line-height:
-        1.7;
+.requirement:last-child {
+    border-bottom: 0;
 }
 
 
-.requirements-download {
-    margin-top:
-        34px;
+.requirement span {
+    color: #596570;
 
-    display: flex;
-
-    justify-content:
-        flex-start;
-
-    gap: 12px;
+    font-size: 11px;
 }
 
+
+.requirement strong {
+    color: #c2cbd2;
+
+    font-size: 12px;
+
+    font-weight: 550;
+}
 
 .requirements-card {
     overflow: hidden;
