@@ -1414,6 +1414,12 @@ footer {
             34px;
     }
 
+    .hero-banner {
+    margin-bottom: 35px;
+
+    border-radius: 10px;
+    }
+
 
     h1 {
         font-size:
