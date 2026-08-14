@@ -252,6 +252,24 @@ a {
     text-align: center;
 }
 
+.hero-banner {
+    width: 100%;
+
+    margin-bottom: 55px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+}
+
+
+.hero-banner img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
 
 .status {
     display: inline-flex;
