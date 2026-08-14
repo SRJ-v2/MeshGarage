@@ -181,29 +181,15 @@ a {
 }
 
 
-.brand-mark {
-    width: 30px;
-    height: 30px;
+.brand-logo {
+    width: 34px;
+    height: 34px;
 
-    display: inline-grid;
+    display: block;
 
-    place-items: center;
+    object-fit: contain;
 
-    border:
-        1px solid #344550;
-
-    border-radius: 7px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #18242c,
-            #0c1116
-        );
-
-    color: var(--accent);
-
-    font-size: 12px;
+    flex-shrink: 0;
 }
 
 
