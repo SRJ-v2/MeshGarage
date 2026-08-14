@@ -321,31 +321,27 @@ a {
 }
 
 
-h1 {
+.hero-info-text {
     width: 100%;
 
-    margin: 0 auto;
+    margin: 0;
 
-    font-size:
-        clamp(
-            42px,
-            4.25vw,
-            66px
-        );
+    color: #dce3e8;
 
-    line-height: 1;
+    font-size: 24px;
 
-    letter-spacing: -3.5px;
+    font-weight: 600;
 
-    white-space: nowrap;
+    line-height: 1.25;
 
-    text-align: center;
+    letter-spacing: -0.6px;
+
+    text-align: left;
 }
 
 
-h1 span {
-    color:
-        #6f7c87;
+.hero-info-text span {
+    color: #6f7c87;
 }
 
 
